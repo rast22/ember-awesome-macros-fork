@@ -107,6 +107,7 @@ import { nameOfMacro } from 'ember-awesome-macros';
 * [`array.reverse`](#arrayreverse)
 * [`array.rejectBy`](#arrayrejectby)
 * [`array.slice`](#arrayslice)
+* [`array.sortBy`](#arraysortBy)
 * [`array.sort`](#arraysort)
 * [`array.uniqBy`](#arrayuniqby)
 * [`array.uniq`](#arrayuniq)
@@ -560,6 +561,14 @@ wraps [`Array.prototype.slice()`](https://developer.mozilla.org/en-US/docs/Web/J
 array: [1, 2, 3],
 value1: array.slice('array', 1), // [2, 3]
 value2: array.slice('array', difference('array.length', 1)) // [3]
+```
+
+##### `array.sortBy`
+sorts the given array of objects by key
+```js
+array1: Ember.A([{ key: 'abc' }, { key: 'xyz' }]),
+value1: array.sortBy('array1', 'key'), // [{ key: 'abc' }, { key: 'xyz' }]
+value2: array.sortBy('array1', 'key:desc'), // [{ key: 'xyz' }, { key: 'abc' }]
 ```
 
 ##### `array.sort`
